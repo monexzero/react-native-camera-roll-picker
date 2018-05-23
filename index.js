@@ -141,6 +141,10 @@ class CameraRollPicker extends Component {
       containerWidth
     } = this.props;
 
+    if(typeof(selectedMarker) === "function") {
+      selectedMarker = selectedMarker(item);
+    }
+
     var uri = item.node.image.uri;
     var isSelected = (this._arrayObjectIndexOf(selected, 'uri', uri) >= 0) ? true : false;
 
