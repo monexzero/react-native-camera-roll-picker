@@ -9,6 +9,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import _ from "lodash";
 
 import ImageItem from './ImageItem';
 
@@ -34,6 +35,7 @@ class CameraRollPicker extends Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       selected: nextProps.selected,
+      dataSource: _.cloneDeep(this.state.dataSource),
     });
   }
 
