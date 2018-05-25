@@ -240,7 +240,7 @@ class CameraRollPicker extends Component {
   }
 
   _arrayObjectIndexOf(array, property, value) {
-    return array.map((o) => { return o[property]; }).indexOf(value);
+    return array.map((o) => { return value.indexOf(o[property]) != -1; }).indexOf(true);
   }
 
 }
